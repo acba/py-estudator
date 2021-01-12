@@ -11,6 +11,17 @@ DIA_SEMANA = {
     7: 'Domingo',
 }
 
+NOME_DIA_SEMANA = {
+    'segunda': 1,
+    'terça': 2,
+    'quarta': 3,
+    'quinta': 4,
+    'sexta': 5,
+    'sábado': 6,
+    'domingo': 7,
+    'default': -1,
+}
+
 def get_dia(data):
     return DIA_SEMANA[data.isoweekday()]
 
@@ -85,6 +96,39 @@ def read_ciclos(path):
     conteudo = file.readlines()
     return parse_ciclos(conteudo)
 
+
+def parse_alocacao(conteudo):
+    alocacao = {}
+    diasemana = ''
+
+    for idx, linha in enumerate(conteudo):
+        linha = linha.strip()
+
+        if linha.startswith('-'):
+            diasemana = linha.replace('-', '').lower().strip()
+            try:
+                diasemana = NOME_DIA_SEMANA[diasemana]
+            except KeyError:
+                print(f'Dia da semana inválido: {diasemana}')
+                diasemana = NOME_DIA_SEMANA['default']
+
+            alocacao[diasemana] = []
+        
+        elif len(linha) > 0:
+            dado = linha.split('-')
+            
+            alocacao[diasemana].append({
+                'superciclo': dado[0],
+                'ciclo': dado[1]
+            })
+
+    return alocacao
+
+def read_alocacao(path):
+    file = open(path, 'r')
+    conteudo = file.readlines()
+    return parse_alocacao(conteudo)
+
 def write_disciplinas(path, disciplinas):
     with open(path, 'w') as file:
         lista_disciplinas = list(disciplinas.keys())
@@ -135,3 +179,14 @@ def silentremove(filename):
         os.remove(filename)
     except:
         pass
+
+def calcula_dia(ciclos, disciplinas, alocacao, atual, path):
+    with open(path, 'a') as f:
+        print(''.center(80, '='), file=f)
+        print(f'{get_dia(atual)}  -  {atual}'.center(80, '='), file=f)
+        print(''.center(80, '='), file=f)
+
+        plano_diario = alocacao[-1] if atual.isoweekday() not in alocacao.keys() else alocacao[atual.isoweekday()]
+        for item in plano_diario:
+            print(f"{item['superciclo']}: {get_assunto(ciclos[item['superciclo']][item['ciclo']], disciplinas)}", file=f)
+        print('\n', file=f)
