@@ -1,13 +1,53 @@
-
-=== Básicas ===
-
 ##Português
 ##AFO
+0
+01 - PPA, LDO e LOA
+02 - Princípios Orçamentários
+03 - Créditos Adicionais
+04 - Ciclo Orçamentário
+05 - Tipos e Espécies de Orçamento
+06 - Receita Pública
+07 - Despesa Pública
+
 ##Contabilidade Geral
+0
+01 - Conceitos de Contabilidade
+02 - Sistema de contas, Plano de Contas e Teorias Contábeis
+03 - Escrituração - Lançamento Contábil
+04 - Regime de Caixa e Competência - Lançamentos básicos
+05 - Balanço Patrimonial - Ativo Circulante
+06 - Balanço Patrimonial - Ativo Não Circulante - RLP, Intangível e Investimentos
+07 - Balanço Patrimonial - Ativo Não Circulante - Imobilizado
+08 - Operações com Mercadorias
+
 ##Administração Pública
+0
+01 - Modelos de Estado e de Administração Pública
+02 - Administração Pública no Brasil
+03 - Governança Pública, Governabilidade e Accountability
+04 - Transparência
+
 ##Auditoria Governamental
-##RLM
+0
+01 - Conceitos de Auditor
+02 - Auditoria Interna
+03 - Planejamento de Auditoria
+04 - Risco de Auditoria
+05 - Procedimentos de Auditoria
+06 - Relatório de Auditoria
+07 - Auditoria Governamental
+08 - Governança e COSO
+09 - Normas - ISSAI
+10 - NAT, NAG e IIA
+
 ##Estatística
+0
+01 - Médias e Medianas
+02 - Modas
+03 - Desvio Padrão e Variância
+04 - Correlação
+
+##RLM
 
 
 ##Direito Administrativo
@@ -90,7 +130,6 @@
 05 - Sistemas de Amortização
 06 - Análise de Investimentos
 
-
 ##Direito Tributário
 0
 00 - Conceito, Espécies e classificação dos Tributos - Competência Tributária
@@ -106,23 +145,8 @@
 10 - Extinção do Crédito Tributário
 11 - Garantias e Privilégios do Crédito Tributário - Administração Tributária
 
-
-== TI ==
-
 ##Banco de Dados
 ##Fiscalização de Contratos de TI
-
-##Gestão e Governança de TI
-0
-01 - PMBOK
-02 - COBIT
-03 - BPM
-04 - ITIL 4
-
-##Segurança da Informação
-0
-01 - Normas ISO
-
 ##Infra
 01 - Redes
 02 - Infraestrutura de Datacenters
@@ -131,15 +155,32 @@
 01 - Engenharia de Software
 02 - Desenvolvimento de Software
 
-##EX - Segurança da Informação
-01 - ISO 27000
+##Segurança da Informação
+01 - ISO 27001 e 27002
 02 - ISO 27005
-03 - Outras Normas de Segurança
-04 - Segurança de Redes - Ataques
+03 - NBR ABNT 15999 e ISO 22301
+04 - Segurança de Redes - Firewall, IPS-IDS e Malwares
+05 - Segurança de Redes - Ataques
 
-##EX - Gestão e Governança de TI
+##Gestão e Governança de TI
 01 - PMBOK
 02 - ITIL v3
 03 - BPM
 04 - COBIT
 05 - MPS-BR
+
+
+##E - Português
+##E - AFO
+##E - Contabilidade Geral
+##E - Administração Pública
+##E - Gestão e Governança de TI
+0
+01 - PMBOK
+02 - COBIT
+03 - BPM
+04 - ITIL 4
+##E - Segurança da Informação
+0
+01 - Normas ISO
+##E - Banco de Dados

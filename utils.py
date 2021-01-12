@@ -41,7 +41,10 @@ def parse_disciplinas(conteudo):
 
         if linha.startswith('##'):
             disciplina = linha.replace('##', '')
-            contador = conteudo[idx+1]
+            try: 
+                contador = conteudo[idx+1]
+            except IndexError:
+                contador = 0
 
             cnt = 0 if parse_int(contador) is None else parse_int(contador)
             disciplinas[disciplina] = {
@@ -81,6 +84,10 @@ def parse_ciclos(conteudo):
         elif linha.startswith('#'):
             ciclo = linha.replace('#', '')
             contador = conteudo[idx+1]
+            try: 
+                contador = conteudo[idx+1]
+            except IndexError:
+                contador = 0
 
             cnt = 0 if parse_int(contador) is None else parse_int(contador)
             planejamento[superciclo][ciclo] = {
