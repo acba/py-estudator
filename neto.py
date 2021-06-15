@@ -13,31 +13,49 @@ dias = {
 
 estudo = {
     'cb': {
-        'cnt': 205,
+        'cnt': 82,
         'materias': [
-            'Português',
-            'Direito Constitucional',
-            'Direito Penal',
+            # 'Direito Constitucional',
+            # 'Direito Penal',
+            # 'Direito Processual Penal',
             'Contabilidade',
+            'Português',
+            'TI - Dados (Aulas 18 a 23)',
             'Direito Administrativo',
-            'RLM',
-            'Direito Processual Penal',
             'Contabilidade',
             'Estatística',
+            'TI - Redes (Aulas 00 a 05)',
+            'RLM',
+            'Contabilidade',
+            'TI - Dados (Aulas 18 a 23)',
         ]
     }
 }
 
 exercicio = {
     'cb': {
-        'cnt': 264,
+        'cnt': 692,
         'materias': [
             'Português',
+            'TI - Redes (Aulas 00 a 05)',
+            'Contabilidade',
+            'RLM',
             'Direito Constitucional',
+            'Estatística',
+            'TI - Dados (Aulas 18 a 23)',
+            'Contabilidade',
             'Direito Penal',
+            'TI - Redes (Aulas 00 a 05)',
             'Direito Administrativo',
             'RLM',
+            'Português',
+            'TI - Dados (Aulas 18 a 23)',
+            'Estatística',
+            'Contabilidade',
+            'TI - Redes (Aulas 00 a 05)',
+            'RLM',
             'Direito Processual Penal',
+            'TI - Dados (Aulas 18 a 23)',
             'Contabilidade',
             'Estatística',
         ]
@@ -47,7 +65,7 @@ exercicio = {
 
 def get(tipo, ciclo):
     fonte = estudo if tipo == 'estudo' else exercicio
-    tempo = '1h20' if tipo == 'estudo' else '15min'
+    tempo = '1h' if tipo == 'estudo' else '15min'
     dado = fonte[ciclo]
 
     idx = dado['cnt'] % len(dado['materias'])
@@ -96,11 +114,55 @@ def calcula_dia_cb(atual):
     get('exercicio', 'cb')
     get('exercicio', 'cb')
     get('exercicio', 'cb')
+    # get('exercicio', 'cb')
 
     print()
     print()
 
-def babyday(atual):
+def discursiva(atual):
+    print('===================================================')
+    print('=                                                 =')
+    print('=        ', dias[atual.isoweekday()], '  -  ',  atual, '         =')
+    print('=                                                 =')
+    print('===================================================')
+
+    print()
+    print('* DISCURSIVA')
+    print()
+
+    print()
+    print()
+
+def reta_final(atual):
+    print('===================================================')
+    print('=                                                 =')
+    print('=        ', dias[atual.isoweekday()], '  -  ',  atual, '         =')
+    print('=                                                 =')
+    print('===================================================')
+
+    print()
+    print('* EXERCICIO')
+    print()
+
+    get('exercicio', 'cb')
+    get('exercicio', 'cb')
+    get('exercicio', 'cb')
+    get('exercicio', 'cb')
+
+    print()
+
+    get('exercicio', 'cb')
+    get('exercicio', 'cb')
+
+
+    print()
+    print('* REVISÃO')
+    print()
+
+    print()
+    print()
+
+def sabado(atual):
     print('===================================================')
     print('=                                                 =')
     print('=        ', dias[atual.isoweekday()], '  -  ',  atual, '         =')
@@ -123,19 +185,22 @@ def babyday(atual):
     get('exercicio', 'cb')
     get('exercicio', 'cb')
     get('exercicio', 'cb')
-    get('exercicio', 'cb')
-    get('exercicio', 'cb')
+    # get('exercicio', 'cb')
+    # get('exercicio', 'cb')
 
     print()
     print()
 
 
-# atual = date(2020, 12, 21)
 atual = date.today()
+atual = date(2021, 5, 17)
 
 while atual.isoweekday() < 7:
 
-    calcula_dia_cb(atual)
+    if atual.isoweekday() == 6:
+        reta_final(atual)
+    else:
+        reta_final(atual)
     atual = atual + timedelta(days=1)
 
 

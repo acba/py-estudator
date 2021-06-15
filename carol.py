@@ -13,87 +13,66 @@ dias = {
 
 estudo = {
     'cb': {
-        'cnt': 304,
+        'cnt': 21,
         'materias': [
             'Português',
-            'RLM',
             'Auditoria Governamental',
+            'Direito Administrativo',
+
             'Controle Externo',
-            'Administração Pública',
-            'Direito Civil',
-            'Finanças Corporativas',
-            'Direito Processual Civil',
-            'Análise de Dados e Informação',
+            'Contabilidade Pública',
+            'AFO',
+
+            'Português',
+            'Direito Constitucional',
+            'Contabilidade Geral',
+
+            'Direito Administrativo',
+            'Auditoria Governamental',
+            'Português',
+
+            'Controle Externo',
+            'AFO',
+            'Direito Constitucional',
         ]
     }
 }
 
 exercicio = {
     'cb': {
-        'cnt': 336,
+        'cnt': 26,
         'materias': [
             'Português',
+            'AFO',
+            'Auditoria Governamental',
             'Direito Administrativo',
+
+            'Controle Externo',
+            'Português',
+            'Contabilidade Pública',
+            'AFO',
+
             'Direito Constitucional',
+            'Contabilidade Geral',
+            'Português',
             'Auditoria Governamental',
+
+            'Direito Administrativo',
+            'AFO',
             'Controle Externo',
-            'RLM',
-            'Estatística',
-            # 'Direito Constitucional',
-            'Análise de Dados e Informação',
-            'Matemática Financeira',
-            'Direito Penal',
-            'Finanças Corporativas',
-            'Direito Civil',
-            'Direito Tributário',
-            'Direito Processual Civil'
+            'Português',
+
+            'Contabilidade Pública',
+            'Direito Constitucional',
+            'Contabilidade Geral'
         ]
     },
-    'ce': {
-        'cnt': 360,
-        'materias': [
-            'AFO',
-            'Contabilidade Geral',
-            'Economia',
-            'Contabilidade Pública',
-            'Contabilidade de Custos',
-            'Contabilidade Geral',
-            'Contabilidade Pública',
-            'AFO',
-            'Economia',
-            'Contabilidade Geral',
-            'Contabilidade Pública',
-            {'Licitações, Contratos e Convênios': ['Contratos Administrativos', 'Lei 8.666', 'Pregão - SRP - RDC - Convênios']},
-            'Contabilidade Geral',
-            'AFO',
-            'Contabilidade Pública',
-            'Economia',
-            'Contabilidade Geral',
-            'Contabilidade Pública',
-            'AFO',
-            'ADC - Análise das Demonstrações Contábeis',
-            'Economia',
-            'AFO',
-            'Contabilidade Geral',
-            'Contabilidade Pública',
-        ]
-    },
-    'reforco': {
-        'cnt': 5,
-        'materias': [
-            'Auditoria Governamental',
-            'Economia',
-            'Controle Externo',
-            {'Licitações, Contratos e Convênios': ['Contratos Administrativos', 'Lei 8.666', 'Pregão - SRP - RDC - Convênios']},
-            'Análise de Dados e Informação',
-        ]
-    }
 }
 
 
 def get(tipo, ciclo):
     fonte = estudo if tipo == 'estudo' else exercicio
-    tempo = '1h' if tipo == 'estudo' else '15min'
+    tempo = '40min' if tipo == 'estudo' else '15min'
     dado = fonte[ciclo]
 
     idx = dado['cnt'] % len(dado['materias'])
@@ -130,45 +109,22 @@ def calcula_dia_cb(atual):
     get('estudo', 'cb')
     get('estudo', 'cb')
     get('estudo', 'cb')
+    get('estudo', 'cb')
 
     print()
     print('* EXERCICIO')
     print()
 
-    get('exercicio', 'reforco')
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
     get('exercicio', 'cb')
-
-    print()
-    print()
-
-def calcula_dia_discursiva(atual):
-    print(''.center(80, '='))
-    print(f'{dias[atual.isoweekday()]}  -  {atual}'.center(80, '='))
-    print(''.center(80, '='))
-
-    print()
-    print('* DISCURSIVA')
-    print()
-
-    print()
-    print('* EXERCICIO')
-    print()
-
-    get('exercicio', 'reforco')
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
-    get('exercicio', 'cb')
-    get('exercicio', 'ce')
     get('exercicio', 'cb')
 
     print()
     print()
 
-def babyday(atual):
+def dia_mais_leve(atual):
     print(''.center(80, '='))
     print(f'{dias[atual.isoweekday()]}  -  {atual}'.center(80, '='))
     print(''.center(80, '='))
@@ -179,50 +135,58 @@ def babyday(atual):
 
     get('estudo', 'cb')
     get('estudo', 'cb')
-    # get('estudo', 'ce')
+    get('estudo', 'cb')
 
     print()
     print('* EXERCICIO')
     print()
 
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
     get('exercicio', 'cb')
-    get('exercicio', 'ce')
+    get('exercicio', 'cb')
 
     print()
     print()
+
 
 def soexercicio(atual):
-    print('===================================================')
-    print('=                                                 =')
-    print('=        ', dias[atual.isoweekday()], '  -  ',  atual, '         =')
-    print('=                                                 =')
-    print('===================================================')
+    print(''.center(80, '='))
+    print(f'{dias[atual.isoweekday()]}  -  {atual}'.center(80, '='))
+    print(''.center(80, '='))
 
     print()
     print('* EXERCICIO')
     print()
 
-    get('exercicio', 'cb')
-    get('exercicio', 'ce')
-    get('exercicio', 'cb')
-    get('exercicio', 'ce')
-    get('exercicio', 'cb')
-    get('exercicio', 'ce')
+    get('exercicio', 'pf')
+    get('exercicio', 'pf')
+    get('exercicio', 'pf')
+    get('exercicio', 'standby')
+    get('exercicio', 'standbyce')
 
     print()
     print()
+
 
 atual = date.today()
+atual = date(2021, 6, 15)
 
 
-while atual.isoweekday() < 6:
+# DIA_SEMANA = {
+#     1: 'Segunda Feira',
+#     2: 'Terça Feira  ',
+#     3: 'Quarta Feira ',
+#     4: 'Quinta Feira ',
+#     5: 'Sexta Feira  ',
+#     6: 'Sábado       ',
+#     7: 'Domingo',
+# }
 
-    if atual.isoweekday() == 3:
-        calcula_dia_discursiva(atual)
+while atual.isoweekday() < 7:
+
+    if atual.isoweekday() == 4:
+        dia_mais_leve(atual)
     else:
         calcula_dia_cb(atual)
     atual = atual + timedelta(days=1)
@@ -231,5 +195,5 @@ while atual.isoweekday() < 6:
 print()
 print('###### VARS ######')
 print(f"Estudo - CB: {estudo['cb']['cnt']}")
-print(f"Exercicio - CB: {exercicio['cb']['cnt']} CE: {exercicio['ce']['cnt']} REF: {exercicio['reforco']['cnt']}")
+print(f"Exercicio - CB: {exercicio['cb']['cnt']}")
 print()

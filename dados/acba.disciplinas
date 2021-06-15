@@ -1,6 +1,6 @@
 ##Português
 ##AFO
-0
+1
 01 - PPA, LDO e LOA
 02 - Princípios Orçamentários
 03 - Créditos Adicionais
@@ -10,7 +10,7 @@
 07 - Despesa Pública
 
 ##Contabilidade Geral
-0
+1
 01 - Conceitos de Contabilidade
 02 - Sistema de contas, Plano de Contas e Teorias Contábeis
 03 - Escrituração - Lançamento Contábil
@@ -51,7 +51,7 @@
 
 
 ##Direito Administrativo
-1
+2
 01 - Princípios e Conceitos
 02 - Poderes Administrativos
 03 - Atos Administrativos
@@ -71,7 +71,7 @@
 
 
 ##Licitações e Contratos
-1
+2
 01 - Lei 8.666 - Licitações
 02 - Lei 8.666 - Contratos Administrativos
 03 - Lei 10.520, SRP e RDC
@@ -146,14 +146,37 @@
 11 - Garantias e Privilégios do Crédito Tributário - Administração Tributária
 
 ##Banco de Dados
+01 - Projeto e Modelagem de Dados
+02 - Linguagem SQL
+03 - SGBD
+04 - Bancos de Dados Dimensionais e Mineração de Dados
+05 - Resto
+
 ##Fiscalização de Contratos de TI
 ##Infra
-01 - Redes
-02 - Infraestrutura de Datacenters
+01 - Redes - Modelos de Referência e Arquitetura de Redes e Topologias
+01 - Redes - Principais Protocolos de Redes
+01 - Redes - Componentes Físicos de Redes
+
+02 - Infraestrutura de Datacenters - Cloud Computing
+02 - Infraestrutura de Datacenters - RAID
+02 - Infraestrutura de Datacenters - DAS, NAS e SAN
+02 - Infraestrutura de Datacenters - Backup
+02 - Infraestrutura de Datacenters - Virtualização
 
 ##ESW
-01 - Engenharia de Software
-02 - Desenvolvimento de Software
+01 - Engenharia de Software - Metodologias de Desenvolvimento
+01 - Engenharia de Software - APF
+01 - Engenharia de Software - UML
+01 - Engenharia de Software - Engenharia de Requisitos
+01 - Engenharia de Software - Testes de Software
+01 - Engenharia de Software - Qualidade de Software
+01 - Engenharia de Software - Padrões de Projeto
+02 - Desenvolvimento de Software - Linguagens de Programação
+02 - Desenvolvimento de Software - Algoritmos e Estruturas de Dados
+02 - Desenvolvimento de Software - Desenvolvimento Web
+02 - Desenvolvimento de Software - Arquitetura de Aplicações
+02 - Desenvolvimento de Software - Web Services
 
 ##Segurança da Informação
 01 - ISO 27001 e 27002
@@ -161,6 +184,7 @@
 03 - NBR ABNT 15999 e ISO 22301
 04 - Segurança de Redes - Firewall, IPS-IDS e Malwares
 05 - Segurança de Redes - Ataques
+05 - Segurança de Redes - Criptografia
 
 ##Gestão e Governança de TI
 01 - PMBOK
@@ -177,9 +201,7 @@
 ##E - Gestão e Governança de TI
 0
 01 - PMBOK
-02 - COBIT
-03 - BPM
-04 - ITIL 4
+02 - ITIL 4
 ##E - Segurança da Informação
 0
 01 - Normas ISO

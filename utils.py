@@ -41,7 +41,7 @@ def parse_disciplinas(conteudo):
 
         if linha.startswith('##'):
             disciplina = linha.replace('##', '')
-            try: 
+            try:
                 contador = conteudo[idx+1]
             except IndexError:
                 contador = 0
@@ -84,7 +84,7 @@ def parse_ciclos(conteudo):
         elif linha.startswith('#'):
             ciclo = linha.replace('#', '')
             contador = conteudo[idx+1]
-            try: 
+            try:
                 contador = conteudo[idx+1]
             except IndexError:
                 contador = 0
@@ -120,10 +120,10 @@ def parse_alocacao(conteudo):
                 diasemana = NOME_DIA_SEMANA['default']
 
             alocacao[diasemana] = []
-        
+
         elif len(linha) > 0:
             dado = linha.split('-')
-            
+
             alocacao[diasemana].append({
                 'superciclo': dado[0],
                 'ciclo': dado[1]
@@ -192,6 +192,7 @@ def calcula_dia(ciclos, disciplinas, alocacao, atual, path):
         print(''.center(80, '='), file=f)
         print(f'{get_dia(atual)}  -  {atual}'.center(80, '='), file=f)
         print(''.center(80, '='), file=f)
+        print('', file=f)
 
         plano_diario = alocacao[-1] if atual.isoweekday() not in alocacao.keys() else alocacao[atual.isoweekday()]
         for item in plano_diario:
